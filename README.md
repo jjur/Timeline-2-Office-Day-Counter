@@ -1,4 +1,4 @@
-# Timeline to Office Day Counter
+# G Maps Timeline to Home/Office Day Counter
 
 Analyze Google Maps Timeline data to categorize working days for German tax reporting (Entfernungspauschale, Homeoffice-Pauschale, etc.).
 
@@ -9,7 +9,7 @@ Automatically categorizes your working days into:
 - **🏢 Office Days** - Visited office location during working hours (Commuter allowance - Entfernungspauschale)
 - **🏠 Home Days** - Worked from home (office not visited -> Homeoffice Tagespauschale)
 - **🌍 Elsewhere Days** - Worked from other locations (business trips and meal allowances)
-- **❓ Missing Data** - Working days without location data
+- **❓ Missing Data** - Working days without location data 
 
 Output includes precise counts and date lists ready for your *Steuererklärung*.
 
@@ -117,4 +117,4 @@ pip install -r requirements.txt
 ---
 
 *Because if Google knows where you've been, you might as well get a tax deduction.*
-*Made with ❤️ in Düsseldorf*
+*Made with ❤️ in Düsseldorf* (distance: 0km, tax deductible: €0)
