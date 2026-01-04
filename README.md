@@ -15,9 +15,10 @@ Output includes precise counts and date lists ready for your *Steuererklärung*.
 
 ## Quick Start
 
-### Two Analysis Methods
+### Two Analysis Methods 
+Recomendation: try both and compare
 
-**Option A: `main_simple.py`** (Recommended)
+**Option A: `main_simple.py`** 
 - Uses Google's semantic tags (`WORK`, `HOME`)
 - Fast, zero configuration
 - Relies on Google's location tagging
