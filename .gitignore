@@ -213,3 +213,6 @@ timeline.json
 Timeline.json
 *.json
 
+# Output files
+working_days_output.json
+

@@ -186,6 +186,33 @@ def categorize_days(timeline_file, config):
     }
 
 
+def save_results_to_file(results, output_file="working_days_output.json"):
+    """Save results to a JSON file."""
+    output_data = {
+        'office_days': results['office'],
+        'home_days': results['home'],
+        'elsewhere_days': results['elsewhere'],
+        'missing_days': results['missing'],
+        'summary': {
+            'office_count': len(results['office']),
+            'home_count': len(results['home']),
+            'elsewhere_count': len(results['elsewhere']),
+            'missing_count': len(results['missing']),
+            'total_with_data': len(results['office']) + len(results['home']) + len(results['elsewhere']),
+            'total_missing_data': len(results['missing'])
+        }
+    }
+    
+    # Include elsewhere breakdown if available
+    if 'elsewhere_breakdown' in results:
+        output_data['elsewhere_breakdown'] = results['elsewhere_breakdown']
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
+    
+    print(f"\n✓ Results saved to {output_file}")
+
+
 def display_results(results):
     """Display results in a clean, formatted way."""
     print("\n" + "="*50)
@@ -278,6 +305,7 @@ def main():
     
     results = categorize_days(TIMELINE_FILE, config)
     display_results(results)
+    save_results_to_file(results)
 
 
 if __name__ == "__main__":
